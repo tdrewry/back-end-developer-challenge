@@ -655,17 +655,16 @@ const App: React.FC = () => {
                         element={
                             <div>
                                 <p>To complete this challenge, I opted to use React Routes to set up a local API
-                                    implements the requested functions.</p>
+                                    that implements the requested functions.</p>
                                 <p>In addition, I've added some simple button features to enable faster testing of the
                                     API's functionality.</p>
-                                <p>Additional functionality implemented: I added a basic roller which utilizes a uniform
-                                    distribution model paired with a MersenneTwister(19937) algorithm. The roller is
-                                    used in the updateHP test buttons to set a random value on each visit to the
-                                    updateHP test page. The Roller is pre-configured to roll 2d6, but can be modified to
-                                    roll any number of dice and apply modifiers.</p>
-                                <p>Note, I did not implement the Ioun stone's modifications to hit points, however, that
-                                    could be done by assuming the +2 to con is ontop of the a base of 14 (for a total of 16).
-                                </p>
+                                <h2>Additional functionality implemented:</h2>
+                                <ul>
+                                    
+                                    <li>A basic roller which utilizes a uniform distribution model paired with a MersenneTwister(19937) algorithm. The roller is used in the Update HP test buttons to set a random value on each visit to the Update HP view. The Roller is pre-configured to roll 2d6, but can be modified to roll any number of dice and apply modifiers.</li>
+                                    <li>Equip/Unequip of all items. From the Get Data view, you can equip or unequip all items. Only the constitution modifer is functional in terms of impact as this demo focuses on hit points.</li>
+
+                                </ul>
                                 <p>To get started, click the <b>START APP</b> button below.</p>
                                 <h4>App Start</h4>
                                 <pre><a href='/api/get?key=briv.json&reload=true'><button><code>Start App</code></button></a></pre>

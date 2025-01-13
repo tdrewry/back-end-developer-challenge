@@ -1,5 +1,32 @@
 # DDB Back End Developer Challenge
 
+### Completed
+To complete this challenge, I opted to use React Routes to set up a local API that implements the requested functions.
+In addition, I've added some simple button features to enable faster testing of the API's functionality.
+
+**Additional functionality implemented:**
+* A basic roller which utilizes a uniform distribution model paired with a MersenneTwister(19937) algorithm. The roller is used in the Update HP test buttons to set a random value on each visit to the Update HP view. The Roller is pre-configured to roll 2d6, but can be modified to roll any number of dice and apply modifiers.
+* Equip/Unequip of all items. From the Get Data view, you can equip or unequip all items. Only the constitution modifer is functional in terms of impact as this demo focuses on hit points.
+
+This repo contains the node_modules directory tree which wouldn't normally be included, but rather than require the reviewer(s) to install modules, I've included the director for ease of access.
+
+### Routes definied
+**API Routes:**
+* **/** - The root route provides an API overview and example queries.
+* **/api/get**  - Loads and displays character data from json or session. To force a reload - add a &reload=true as a param. 
+* **/api/del**	- Delete session data
+* **/api/hp**	- Manipulate hit point related things. 
+* * ex. **/api/hp?key=briv.json&type=healing&value=10**
+* * ex. **/api/hp?key=briv.json&type=tempHP&value=8**
+* * ex. **/api/hp?key=briv.json&type=fire&value=12**
+* **/api/equip**- Equip or Unequip all gear. This can be extended to specific gear as needed.
+* * ex. **/api/equip?key=briv.json&equip=true** -- equip all gear
+* * ex. **/api/equip?key=briv.json&equip=false** -- unequip all gear
+
+**Notes**
+* all routes can take a key as input where key=<json file name>. However, only the /get route will use this key to load from file into session storage.
+* there is no UI to change the dice pool for the /hp demo buttons.
+
 ### Overview
 This task focuses on creating an API for managing a player character's Hit Points (HP) within our game. The API will enable clients to perform various operations related to HP, including dealing damage of different types, considering character resistances and immunities, healing, and adding temporary Hit Points. The task requires building a service that interacts with HP data provided in the `briv.json` file and persists throughout the application's lifetime.
 
